@@ -1,6 +1,6 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
-/* Design tokens — available as Tailwind utilities (e.g. bg-brand-600, font-sans) */
+/* Vistora Premium Design System */
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
@@ -16,15 +16,177 @@
   --color-brand-900: #312e81;
 }
 
+:root {
+  --vistora-bg: #f8fafc;
+  --vistora-surface: #ffffff;
+  --vistora-text: #0f172a;
+  --vistora-muted: #64748b;
+  --vistora-border: #e2e8f0;
+  --vistora-primary: #4f46e5;
+  --vistora-primary-dark: #4338ca;
+  --vistora-radius: 1rem;
+}
+
 html {
   scroll-behavior: smooth;
+  background: var(--vistora-bg);
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  color: #0f172a;
+  background: var(--vistora-bg);
+  color: var(--vistora-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Better text selection */
+::selection {
+  background: #c7d2fe;
+  color: #312e81;
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #818cf8;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c7d2fe #f1f5f9;
+}
+
+/* Better focus states */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--vistora-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth interactive elements */
+button,
+a,
+input,
+select,
+textarea {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+/* Premium utility classes */
+.vistora-gradient {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%);
+}
+
+.vistora-gradient-text {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vistora-glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.vistora-card {
+  background: var(--vistora-surface);
+  border: 1px solid var(--vistora-border);
+  border-radius: var(--vistora-radius);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.vistora-card-hover {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.vistora-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: #c7d2fe;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
+}
+
+/* Premium button */
+.vistora-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
+}
+
+.vistora-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.3);
+}
+
+.vistora-button:active {
+  transform: translateY(0);
+}
+
+/* Subtle page entrance animation */
+@keyframes vistora-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vistora-animate {
+  animation: vistora-fade-up 450ms ease-out both;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

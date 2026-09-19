@@ -1,18 +1,23 @@
-import type { NextFunction, Request, Response } from 'express'
+﻿import type { NextFunction, Request, Response } from "express";
 
-/**
- * Central error handler. Express recognises it as error middleware because it
- * has four parameters. Keeps error responses in one consistent JSON shape.
- */
+type AppError = Error & {
+  statusCode?: number;
+};
+
 export const errorHandler = (
-  err: Error,
+  err: AppError,
   _req: Request,
   res: Response,
   _next: NextFunction,
 ): void => {
-  console.error('💥 Error:', err.message)
-  res.status(500).json({
+  console.error("💥 Error:", err.message);
+
+  const statusCode =
+    err.statusCode ??
+    (res.statusCode >= 400 ? res.statusCode : 500);
+
+  res.status(statusCode).json({
     success: false,
-    message: err.message || 'Internal Server Error',
-  })
-}
+    message: err.message || "Internal Server Error",
+  });
+};

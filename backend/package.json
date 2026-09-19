@@ -1,5 +1,5 @@
 {
-  "name": "vistora-backend",
+  "name": "Vistora-backend",
   "version": "1.0.0",
   "description": "Vistora backend API — Node, Express, TypeScript, MongoDB",
   "main": "dist/server.js",
@@ -22,17 +22,19 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
     "helmet": "^8.3.0",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.9.4",
-    "morgan": "^1.12.0"
+    "mongoose": "^9.10.1",
+    "morgan": "^1.12.1",
+    "razorpay": "^2.9.8"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.6.1",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   }

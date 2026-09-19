@@ -1,4 +1,4 @@
-# 🛒 NexCart
+# 🛒 Vistora
 
 A modern, full-stack **MERN** e-commerce application built with **TypeScript** end to end.
 This repository is structured phase by phase — **Phase 1** is the project setup and foundation.
@@ -11,36 +11,36 @@ This repository is structured phase by phase — **Phase 1** is the project setu
 
 **Frontend**
 
-| Tool | Purpose |
-| --- | --- |
-| React + TypeScript + Vite | UI library, typing, dev/build tooling |
-| Tailwind CSS | Utility-first styling |
-| React Router | Client-side routing |
-| Redux Toolkit + React Redux | Global state management |
-| TanStack Query | Server state / data fetching |
-| Axios | HTTP client |
-| Lucide React | Icons |
-| Framer Motion | Animations |
+| Tool                        | Purpose                               |
+| --------------------------- | ------------------------------------- |
+| React + TypeScript + Vite   | UI library, typing, dev/build tooling |
+| Tailwind CSS                | Utility-first styling                 |
+| React Router                | Client-side routing                   |
+| Redux Toolkit + React Redux | Global state management               |
+| TanStack Query              | Server state / data fetching          |
+| Axios                       | HTTP client                           |
+| Lucide React                | Icons                                 |
+| Framer Motion               | Animations                            |
 
 **Backend**
 
-| Tool | Purpose |
-| --- | --- |
-| Node.js + Express + TypeScript | API server + typing |
-| MongoDB + Mongoose | Database + ODM |
-| CORS | Cross-origin access for the frontend |
-| dotenv | Environment variables |
-| Helmet | Secure HTTP headers |
-| Morgan | Request logging |
-| bcryptjs, jsonwebtoken | Reserved for auth (later phase) |
-| tsx | Run TypeScript in dev without a build step |
+| Tool                           | Purpose                                    |
+| ------------------------------ | ------------------------------------------ |
+| Node.js + Express + TypeScript | API server + typing                        |
+| MongoDB + Mongoose             | Database + ODM                             |
+| CORS                           | Cross-origin access for the frontend       |
+| dotenv                         | Environment variables                      |
+| Helmet                         | Secure HTTP headers                        |
+| Morgan                         | Request logging                            |
+| bcryptjs, jsonwebtoken         | Reserved for auth (later phase)            |
+| tsx                            | Run TypeScript in dev without a build step |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-nexcart/
+Vistora/
 ├── frontend/                 # React + TS + Vite app
 │   └── src/
 │       ├── components/       # Reusable UI (Navbar, Footer, ...)
@@ -75,6 +75,7 @@ nexcart/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 - (Optional for Phase 1) MongoDB running locally or a MongoDB Atlas URI
 
@@ -101,14 +102,16 @@ npm run dev               # starts http://localhost:5173
 ## 🔌 Environment Variables
 
 **backend/.env**
+
 ```
 PORT=5000
-MONGODB_URI=mongodb://127.0.0.1:27017/nexcart
+MONGODB_URI=mongodb://127.0.0.1:27017/Vistora
 JWT_SECRET=replace_with_a_long_random_secret
 NODE_ENV=development
 ```
 
 **frontend/.env**
+
 ```
 VITE_API_URL=http://localhost:5000/api
 ```
@@ -126,7 +129,7 @@ curl http://localhost:5000/api/health
 ```json
 {
   "success": true,
-  "message": "NexCart API is running"
+  "message": "Vistora API is running"
 }
 ```
 

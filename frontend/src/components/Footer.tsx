@@ -14,7 +14,7 @@ const Footer = () => {
               <ShoppingBag className="h-4 w-4" />
             </span>
             <span className="text-lg font-bold text-slate-900">
-              Nex<span className="text-brand-600">Cart</span>
+              Vistora
             </span>
           </Link>
 
@@ -44,3 +44,4 @@ const Footer = () => {
 }
 
 export default Footer
+
